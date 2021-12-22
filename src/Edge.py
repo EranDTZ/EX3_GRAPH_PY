@@ -7,3 +7,9 @@ class Edges:
         self.dest = dest;
         self.w = w
         
+    def getsrc(self):
+        return self.scr
+    
+    def getdest(self):
+        return self.dest
+        
