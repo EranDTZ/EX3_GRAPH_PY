@@ -1,7 +1,6 @@
 
 from GraphAlgoInterface import GraphAlgoInterface
 from DiGraph import DiGraph
-from Node import Node
 import json
 
 
@@ -47,6 +46,27 @@ def load_from_json(self, file_name: str) -> bool:
             raise NotImplementedError
 
         def shortest_path(self, id1: int, id2: int) -> (float, list):
+            D = {v: float('inf') for v in range(graph.v)}
+            D[id1] = 0
+
+            current_vertex = id1
+
+            pq = PriorityQueue()
+            pq.put((0, start_vertex))
+
+            while not pq.empty():
+                (dist, current_vertex) = pq.get()
+                graph.nodes.get(current_vertex).setag(1)
+                for neighbor in range(graph.nodes):
+                    if graph.nodes.get(current_vertex).getag() == 0:
+                        distance = graph.nodes.get(current_vertex).inEdges.get(neighbor)
+                        if neighbor not in graph.nodes:
+                            old_cost = D[neighbor]
+                            new_cost = D[current_vertex] + distance
+                            if new_cost < old_cost:
+                                pq.put((new_cost, neighbor))
+                                D[neighbor] = new_cost
+            return D
             """
             Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm
             @param id1: The start node id

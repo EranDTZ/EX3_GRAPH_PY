@@ -1,5 +1,6 @@
 # from DiGraph import DiGraph
 # from GraphAlgo import GraphAlgo
+import matplotlib.pyplot as plt
 
 
 # def check():
@@ -105,6 +106,11 @@
 #
 
 if __name__ == '__main__':
+    fig, axes = plt.subplots(figsize=(7, 5))
+    axes.set_title("TITLE", {'fontname': 'Courier New'}, fontsize=20)
+
+    plt.scatter(10, 10, s=50, color="red")
+    plt.show()
     # check()
     node = {1,2,3,4}
     node.pop()
