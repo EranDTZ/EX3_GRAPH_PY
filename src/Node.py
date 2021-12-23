@@ -1,7 +1,7 @@
 from GeoLocation import GeoLocation
 
 
-class Nodes:
+class Node:
 
     def __init__(self,pos : {},id : int):
         self.pos = pos

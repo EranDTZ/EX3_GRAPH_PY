@@ -1,5 +1,5 @@
 
-from GraphAlgoInterface import GraphAlgoInterface
+from face.GraphAlgoInterface import GraphAlgoInterface
 from DiGraph import DiGraph
 import json
 
@@ -9,7 +9,7 @@ class GraphAlgo:
     def __init__(self):
         self.graph = DiGraph()
 
-    def get_graph(self) -> GraphInterface:
+    def get_graph(self) -> DiGraph:
         return self.graph
         """
         :return: the directed graph on which the algorithm works on.

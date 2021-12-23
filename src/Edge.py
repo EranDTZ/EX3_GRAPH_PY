@@ -1,6 +1,6 @@
 
 
-class Edges:
+class Edge:
 
     def __init__(self,src,dest,w):
         self.scr = src;
