@@ -106,14 +106,14 @@ def check3():
 
 
 if __name__ == '__main__':
-    fig, axes = plt.subplots(figsize=(7, 5))
-    axes.set_title("TITLE", {'fontname': 'Courier New'}, fontsize=20)
+    # fig, axes = plt.subplots(figsize=(7, 5))
+    # axes.set_title("TITLE", {'fontname': 'Courier New'}, fontsize=20)
+    #
+    # plt.scatter(10, 10, s=50, color="red")
+    # plt.show()
+    g = DiGraph()
+    g.add_node(0)
+    print()
+    g.add_edge(0, 1, 1)
 
-    plt.scatter(10, 10, s=50, color="red")
-    plt.show()
-    # check()
-    node = {1,2,3,4}
-    node.pop()
-    print(node)
-    check0()
 
